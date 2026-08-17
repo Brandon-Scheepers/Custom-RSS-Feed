@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Word of the Day</title>
+    <description>Your daily Word of the Day.</description>
+    <language>en</language>
+
+    <item>
+      <title>Word of the Day: Excellence</title>
+
+      <description><![CDATA[
+
+<p><strong>Excellence</strong></p>
+<p>Striving to be your best</p>
+<p><em>&ldquo;Excellence is achieved through consistent effort.&rdquo;</em></p>
+
+      ]]></description>
+
+      <pubDate>2026-08-17</pubDate>
+
+      <guid isPermaLink="false">
+        word-of-the-day-2026-08-17
+      </guid>
+    </item>
+
+  </channel>
+</rss>
