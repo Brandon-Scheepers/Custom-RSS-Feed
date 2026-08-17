@@ -37,14 +37,10 @@ function escapeXml(text) {
 }
 
 const word = escapeXml(todayWord.word);
-const meaning = escapeXml(todayWord.meaning);
 const example = escapeXml(todayWord.example);
 
-// Create RSS description
-const description = `
-<p><strong>${word}</strong></p>
-<p><em>&ldquo;${example}&rdquo;</em></p>
-`;
+// Put ONLY the word and example in the RSS title
+const title = `${word} — ${example}`;
 
 // Create the RSS feed
 const rss = `<?xml version="1.0" encoding="UTF-8"?>
@@ -55,11 +51,9 @@ const rss = `<?xml version="1.0" encoding="UTF-8"?>
     <language>en</language>
 
     <item>
-      <title>Word of the Day: ${word}</title>
+      <title>${title}</title>
 
-      <description><![CDATA[
-${description}
-      ]]></description>
+      <description></description>
 
       <pubDate>${today}</pubDate>
 
