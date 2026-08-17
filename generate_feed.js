@@ -1,23 +1,16 @@
 const fs = require("fs");
 
-// South Africa is UTC+2
-const SA_TIMEZONE_OFFSET = 2;
-
-// Read the Word of the Day data
 const words = JSON.parse(
   fs.readFileSync("words.json", "utf8")
 );
 
 // Get today's date in South Africa
-const now = new Date(
-  Date.now() + SA_TIMEZONE_OFFSET * 60 * 60 * 1000
-);
-
-const year = now.getUTCFullYear();
-const month = String(now.getUTCMonth() + 1).padStart(2, "0");
-const day = String(now.getUTCDate()).padStart(2, "0");
-
-const today = `${year}-${month}-${day}`;
+const today = new Intl.DateTimeFormat("en-CA", {
+  timeZone: "Africa/Johannesburg",
+  year: "numeric",
+  month: "2-digit",
+  day: "2-digit"
+}).format(new Date());
 
 // Find today's Word of the Day
 const todayWord = words.find(item => item.date === today);
@@ -39,7 +32,7 @@ function escapeXml(text) {
 const word = escapeXml(todayWord.word);
 const example = escapeXml(todayWord.example);
 
-// Put ONLY the word and example in the RSS title
+// Word + example only
 const title = `${word} — ${example}`;
 
 // Create the RSS feed
@@ -52,14 +45,9 @@ const rss = `<?xml version="1.0" encoding="UTF-8"?>
 
     <item>
       <title>${title}</title>
-
       <description></description>
-
       <pubDate>${today}</pubDate>
-
-      <guid isPermaLink="false">
-        word-of-the-day-${today}
-      </guid>
+      <guid isPermaLink="false">word-of-the-day-${today}</guid>
     </item>
 
   </channel>
