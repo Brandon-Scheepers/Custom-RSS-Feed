@@ -32,8 +32,8 @@ function escapeXml(text) {
 const word = escapeXml(todayWord.word);
 const example = escapeXml(todayWord.example);
 
-// Word + example only
-const title = `${word} — ${example}`;
+// Only the example goes into the RSS title
+const title = example;
 
 // Create the RSS feed
 const rss = `<?xml version="1.0" encoding="UTF-8"?>
