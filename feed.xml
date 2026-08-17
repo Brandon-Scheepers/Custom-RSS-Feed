@@ -6,21 +6,10 @@
     <language>en</language>
 
     <item>
-      <title>Word of the Day: Excellence</title>
-
-      <description><![CDATA[
-
-<p><strong>Excellence</strong></p>
-<p>Striving to be your best</p>
-<p><em>&ldquo;Excellence is achieved through consistent effort.&rdquo;</em></p>
-
-      ]]></description>
-
+      <title>Excellence is achieved through consistent effort.</title>
+      <description></description>
       <pubDate>2026-08-17</pubDate>
-
-      <guid isPermaLink="false">
-        word-of-the-day-2026-08-17
-      </guid>
+      <guid isPermaLink="false">word-of-the-day-2026-08-17</guid>
     </item>
 
   </channel>
