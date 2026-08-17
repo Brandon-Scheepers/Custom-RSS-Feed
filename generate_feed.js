@@ -43,7 +43,6 @@ const example = escapeXml(todayWord.example);
 // Create RSS description
 const description = `
 <p><strong>${word}</strong></p>
-<p>${meaning}</p>
 <p><em>&ldquo;${example}&rdquo;</em></p>
 `;
 
