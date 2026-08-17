@@ -19,7 +19,7 @@ if (!todayWord) {
   throw new Error(`No Word of the Day found for ${today}`);
 }
 
-// Escape characters that could break XML
+// Escape XML characters
 function escapeXml(text) {
   return String(text)
     .replace(/&/g, "&amp;")
@@ -32,10 +32,10 @@ function escapeXml(text) {
 const word = escapeXml(todayWord.word);
 const example = escapeXml(todayWord.example);
 
-// Only the example goes into the RSS title
-const title = example;
+// Complete ticker text
+const title = `Word of the Day: ${word} - &quot;${example}&quot;`;
 
-// Create the RSS feed
+// Create RSS feed
 const rss = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0">
   <channel>
