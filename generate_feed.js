@@ -33,7 +33,7 @@ const word = escapeXml(todayWord.word);
 const example = escapeXml(todayWord.example);
 
 // Complete ticker text
-const title = `Word of the Day: ${word} - &quot;${example}&quot;`;
+const title = `Word of the Day: &quot;${example}&quot;`;
 
 // Create RSS feed
 const rss = `<?xml version="1.0" encoding="UTF-8"?>
